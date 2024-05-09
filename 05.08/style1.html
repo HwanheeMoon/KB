@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        h1{
+            /* margin-top: 90px;
+            margin-left : 80px; */
+            margin : 60px 60px;
+            padding : 30px 20px;
+            border: 5px solid red;
+            background-color: rgb(25, 54, 44);
+            color: rgb(178, 155, 155);
+            text-align: center;
+        }
+
+        #title1{
+            background-color: beige;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+
+        .type1{
+            color : blue;
+            background-color: magenta;
+            text-align: center;
+        }
+
+        p.type2{
+            padding:10px;
+            border: 1px dotted blue;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id = "title1">스타일 1</h1>
+    <h1 id = "title2">스타일 2</h1>
+    <h1 class="type2">스타일 3</h1>
+
+    <p id="title1">p태그 1</p>
+    <p class="type1">p태그 2</p>
+    <p class="type2">p태그 3</p>
+    <p>p태그 4</p>
+</body>
+</html>
+
+<script>
+    document.getElementById("title1").style.backgroundColor="green";
+</script>

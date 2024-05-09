@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:70%;
+            margin : 0 auto;
+            border : 1px solid red;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td, tr {
+            height: 30px;
+            border: 1px solid red;
+            padding:5px 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!--테이블의 열별로 스타일을 주고자 할때 사용-->
+        <colgroup>
+            <col style="width: 12%;"/>
+            <col style="width: 14%;"/>
+            <col style="width: 56%;"/>
+            <col style="width: 18%;"/>
+        </colgroup>
+        
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th>주소</th>
+                <th>이메일</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>홍길동</td>
+                <td>010-0000-0000</td>
+                <td>강남구</td>
+                <td>a1234@gmail.com</td>
+            </tr>
+            <tr>
+                <td>홍길동2</td>
+                <td>010-0000-0000</td>
+                <td>강남구</td>
+                <td>a1234@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
