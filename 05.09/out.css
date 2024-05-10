@@ -1,0 +1,52 @@
+
+
+.top{
+    width: 90%;
+    height: 100px;
+    background-color: lime;
+    position: fixed;
+}
+
+li{
+    list-style: none;
+    float:left;
+    padding:15px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    color: red;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li:nth-child(2n){
+    background-color: pink;
+}
+li:nth-child(2n+1) {
+    background-color: orange;
+}
+li:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+li:last-child{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.cart{
+    border-radius: 100px 10px;
+    background-color: black;
+    float: right;
+    width: 250px;
+    height:100px;
+    color:yellow;
+    font-size: larger;
+    position: fixed;
+    top: 5px;
+    right:5px
+}
+.main{
+    width: 90%;
+    height: 800px;
+    background-color: aliceblue;
+}
