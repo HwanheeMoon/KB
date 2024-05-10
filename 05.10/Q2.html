@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [];
+    let st = [];
+    for(i = 0; i< 14; i++) {
+        arr.push(0);
+    }
+
+    let sel = prompt("좌석번호 선택(1~14), 종료 0");
+    if (parseInt(sel) > 14 || parseInt(sel) < 0) {
+            alert("잘못된 범위");
+        }
+    else {
+        arr[parseInt(sel) - 1] = 1;
+        st.push(parseInt(sel));
+    }
+
+    while(sel) {
+        sel = prompt("좌석번호 선택(1~14), 종료 0");
+        if (parseInt(sel) > 14 || parseInt(sel) < 0) {
+            alert("잘못된 범위");
+        }
+        else if (sel == "0") {
+            alert("예약된 좌석 번호는 " + st.toString() + "\r 예매 금액은 " + (5000 * st.length) + "원" );
+            break;
+        }
+        else if (arr[parseInt(sel) - 1] && arr[parseInt(sel) - 1]) {
+            alert("이미 예약된 좌석입니다.");
+        }
+        else{
+            arr[parseInt(sel) - 1] = 1;
+            st.push(parseInt(sel));
+        }
+    }
+
+
+</script>
