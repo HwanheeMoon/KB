@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <tr>
+            <tr>아이디 입력:</tr>
+            <input type="text" id = "id">
+        </tr>
+        <hr>
+
+        <tr>
+            <tr>패스워드:</tr>
+            <input type="password" id = "pw">
+        </tr>
+        <br>
+        <tr>
+            <tr>패스워드 확인:</tr>
+            <input type="password" id = "pwCheck">
+        </tr>
+
+        <button onclick="checkId()">확인</button>
+        <div style="color: red;" id = "display"></div>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+
+    id = document.getElementById("id");
+    pw = document.getElementById("pw");
+    check = document.getElementById("pwCheck");
+
+    const checkId = () => {
+        if(id.value.length < 5) {
+            alert("5미만 입니다. 다시 입력해주세요.")
+        }
+        else {
+            if(pw.value != check.value) {
+                document.getElementById("display").innerHTML = "<font>불일치</font>"
+            }
+            else {
+                document.getElementById("display").innerHTML = "<font>성공</font>"
+            }
+        }
+    }
+
+</script>
+

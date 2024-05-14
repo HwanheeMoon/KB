@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <tr>
+            <td>
+                아이디
+            </td>
+            <td>
+                <input type="text" id = "user">
+            </td>
+            <td>
+                <button onclick="idCheck()">아이디 체크</button>
+            </td>
+        </tr>
+        <div style="color: red; font-size: large;" id="check"></div>
+        <tr>
+            <td>
+                지식인 검색어
+            </td>
+            <td>
+                <input type="text" id = "search">
+            </td>
+            <td>
+                <button onclick="searchKin()">지식인 검색</button>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                보고싶은 웹툰 입력
+            </td>
+            <td>
+                <input type="text" id = "searchWebtoon">
+            </td>
+            <td>
+                <button onclick="searchWebtoon()">웹툰 검색</button>
+            </td>
+        </tr>
+        
+    </div>
+</body>
+</html>
+<script>
+    id = document.getElementById("user");
+    const idCheck = () => {
+        console.log(id.value);
+        if(id.value == "root"){
+            check.innerHTML = "<font>아이디 성공</font>";
+        }
+    }
+
+    const searchKin = () => {
+        search = document.getElementById("search").value;
+        location.href = "https://kin.naver.com/search/list.naver?query=" + search;
+    }
+
+    const searchWebtoon = () => {
+        search = document.getElementById("searchWebtoon").value;
+        if(search == "신의탑") {
+
+            location.href = "https://comic.naver.com/webtoon/list?titleId=" + "183559";
+        }
+    }
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="jeju()">제주도로</button>
+    </div>
+    <div>
+        <button onclick="japan()">일본으로</button>
+    </div>
+    <div>
+        <button onclick="hawaii()">하와이로</button>
+    </div>
+    <div>
+        <hr>
+        <p>힘들다 !! 우리도 떠나자 !!</p>
+        <hr>
+
+    </div>
+
+    <div>
+        <img id="image" src="https://mobiinsidecontent.s3.ap-northeast-2.amazonaws.com/kr/wp-content/uploads/2019/06/05182809/GettyImages-1130664834-e15603055864881.jpg">
+    </div>
+</body>
+</html>
+<script>
+    const jeju = () => {
+        document.getElementById("image").setAttribute("src", "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSGRvQR5O4YgGrF0WtczIpF8IGZSSJepITgvbb0bPrp8dmOFjENrc4VR4CYg7KgZkd2l1YDkKoHfL7ze5GNcX9ScAATyantVl5-L4teUQ");
+    }
+    const japan = () => {
+        document.getElementById("image").setAttribute("src", "https://i.namu.wiki/i/0G0K3cVn_gTc9ENMIZWzx4Osr302rfBRy0ngtben9pFlx7s2ucLEI0FU-3heh0L8BolxA1_AB9cqxrabhzY8Ww.webp");
+    }
+    const hawaii = () => {
+        document.getElementById("image").setAttribute("src", "https://a.cdn-hotels.com/gdcs/production163/d1501/0dc2012e-1445-4609-bd32-846b51577540.jpg");
+    }
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <td>
+            <h1>구매상점 입력:</h1>
+        </td>
+        <td>
+            <input id = "brand">
+        </td>
+    </div>
+
+    <div>
+        <td>
+            <h1>결제금액 입력:</h1>
+        </td>
+        <td>
+            <input id = "price">
+        </td>
+    </div>
+    <div>
+        <hr>
+        <h1>결제수단 선택</h1>
+        <select id="select">
+            <option value="account" >계좌이체</option>
+            <option value="credit">신용카드</option>
+            <option value="phone" >휴대폰 결제</option>
+        </select>
+        <hr>
+        <button onclick="getResult()">결제 금액 계산</button>
+    </div>
+    <div id = "result">
+        
+    </div>
+
+</body>
+</html>
+<script>
+
+    const getResult = () => {
+
+        select = document.getElementById("select");
+        brand = document.getElementById("brand").value;
+        price = parseInt(document.getElementById("price").value);
+        if(select.value == "credit") {
+            price += 1000;
+        }
+        else if(select.value == "phone") {
+            price += 500;
+        }
+        
+        document.getElementById("result").innerHTML = "<h2>" + brand + "에서 최종 결제 금액:" + price + "</h2>";
+    }
+</script>

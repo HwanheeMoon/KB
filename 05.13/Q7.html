@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['gauge', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        // Create the data table.
+        let data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['운동시간', 40],
+          ['식사시간', 52],
+          ['공부시간', 63]
+        ]);
+
+        // Set chart options
+        let options = {
+            width: 800, height: 500,
+            redFrom: 90, redTo: 100,
+            yellowFrom:75, yellowTo: 90,
+            minorTicks: 5
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        let chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      
+      setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+      }
+
+
+      google.charts.setOnLoadCallback(drawChart2);
+
+
+      function drawChart2() {
+      var data = google.visualization.arrayToDataTable([
+        ["내 점수", "내 점수", { role: "style" } ],
+        ["국어", 100, "lime"],
+        ["컴퓨터", 77, "pink"],
+        ["영어", 99, "red"],
+        ["수학", 88, "blue"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "나의 성적 그래프",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "right" , name : "내 점수"},
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("chart_div2"));
+      chart.draw(view, options);
+  }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <div id = "chart_div2"></div>
+  </body>
+</html>
