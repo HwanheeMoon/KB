@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <h1>그림을 본 느낌은?</h1>
+    <img src="https://cdn.casenews.co.kr/news/photo/202003/3424_12976_4543.jpg">
+    <div>
+        <input id = "input">
+        <button id="push">댓글 달기</button>
+    </div>
+    <div id="display">
+    </div>
+</body>
+</html>
+
+<script>
+    $(document).ready( function() {
+        let btnPush = $("#push");
+        let arr = [];
+
+        btnPush.click(() => {
+            let input = $("#input").val();
+            let display = $("#display");
+            arr.push(input);
+            display.html("<li>" + arr + "</li>");
+            console.log(arr);
+
+        })
+    })
+
+    // const push = (x) => {
+    //     document.getElementById("display").innerHTML += "<li>" + x.value + "</li>" 
+    // }
+</script>

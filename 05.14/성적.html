@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        이름 : <input type="text" name="name" id="name"> <br/>
+        국어 : <input type="text" name="kor" id="kor"> <br/>
+        영어 : <input type="text" name="eng" id="eng"> <br/>
+        수학 : <input type="text" name="mat" id="mat"> <br/>
+
+        <button type="button" id="btnAppend">추가</button>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>총점</th>
+                <th>평균</th>
+            </tr>
+        </thead>
+        <tbody id = "tbody">
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
+
+<script>
+    scores = [
+    {name : "홍길동", "a" : 90, "b" : 99, "c" : 78},
+    {name : "홍길동2", "a" : 80, "b" : 52, "c" : 73},
+    {name : "홍길동3", "a" : 82, "b" : 43, "c" : 87},
+    {name : "홍길동4", "a" : 54, "b" : 59, "c" : 54},
+    {name : "홍길동5", "a" : 12, "b" : 53, "c" : 56},
+    {name : "홍길동6", "a" : 56, "b" : 63, "c" : 56},
+    {name : "홍길동7", "a" : 99, "b" : 87, "c" : 99}
+]
+
+function onLoad() {
+    let tbody = document.querySelector("#tbody");
+    scores.forEach(s => {
+        let t = tbody.insertRow(tbody.rows.length);
+        let cell1 = t.insertCell(0);
+        let cell2 = t.insertCell(1);
+        let cell3 = t.insertCell(2);
+        let cell4 = t.insertCell(3);
+        let cell5 = t.insertCell(4);
+        let cell6 = t.insertCell(5);
+
+        cell1.innerHTML = s.name;
+        cell2.innerHTML = s.a;
+        cell3.innerHTML = s.b;
+        cell4.innerHTML = s.c;
+        cell5.innerHTML = s.a + s.b + s.c;
+        cell6.innerHTML = Math.floor((s.a + s.b + s.c) / 3) ;
+    });
+}
+
+const onPush = (s) => {
+
+    let t = tbody.insertRow(tbody.rows.length);
+    let cell1 = t.insertCell(0);
+    let cell2 = t.insertCell(1);
+    let cell3 = t.insertCell(2);
+    let cell4 = t.insertCell(3);
+    let cell5 = t.insertCell(4);
+    let cell6 = t.insertCell(5);
+    
+    cell1.innerHTML = s.name;
+    cell2.innerHTML = s.a;
+    cell3.innerHTML = s.b;
+    cell4.innerHTML = s.c;
+    cell5.innerHTML = s.a + s.b + s.c;
+    cell6.innerHTML = Math.floor((s.a + s.b + s.c) / 3) ;
+
+}
+
+document.getElementById("btnAppend").addEventListener("click", () => {
+    n = document.getElementById("name");
+    kor = document.getElementById("kor");
+    eng = document.getElementById("eng");
+    mat = document.getElementById("mat");
+    //scores.push({name :(n.value), "a" : parseInt(kor.value), "b" : parseInt(eng.value), "c" : parseInt(mat.value)});
+    
+    let s = {name :(n.value), "a" : parseInt(kor.value), "b" : parseInt(eng.value), "c" : parseInt(mat.value)};
+    onPush(s);
+    console.log(scores);
+})
+window.onload = () => {
+    onLoad();
+    }
+</script>
